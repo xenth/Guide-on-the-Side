@@ -1,5 +1,5 @@
 # TinyMCE 3.x and CakePHP conflict if short_open_tag is on
-php_flag short_open_tag off
+#php_flag short_open_tag off
 
 <IfModule mod_shib>
   AuthType Shibboleth
@@ -9,7 +9,6 @@ php_flag short_open_tag off
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php?/$1 [QSA,L]

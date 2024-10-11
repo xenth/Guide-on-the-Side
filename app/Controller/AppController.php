@@ -33,7 +33,9 @@ class AppController extends Controller {
     $this->loadModel('Role');
     $this->Role->recursive = 0;
     $role = $this->Role->findById($role_id);
-    $this->Session->write('Role', $role['Role']);
+    if (isset($role['Role'])) {
+      $this->Session->write('Role', $role['Role']);
+    }
 
     $this->set('is_admin', $this->Session->read('Role.name') == 'admin');
     $this->set('show_password_link', !$this->Auth->user('noLoginForm'));

@@ -9,7 +9,7 @@ class SteppableBehavior extends ModelBehavior {
 
   var $general_question_pattern = '/\<img[^>]*class\="question"[^>]*src\="questions\/view_image\/(\d+)"[^>]*\/\>/';
 
-  public function beforeSave(&$Model) {
+  public function beforeSave(Model $model, $options = []) {
     // Sanitize the content on save. This does not sanitize definitions (done in getStepsWithContent()), questions
     //   (done in question/answer models), or headings (done in _generateDefinition(Print)HTML)
     // A bit scattered, I know. Sorry about that.
